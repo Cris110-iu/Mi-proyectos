@@ -1,0 +1,19 @@
+/* src/app/components/navbar/navbar.component.css */
+.navbar {
+    background-color: #007bff;
+    padding: 1rem;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .navbar a.active {
+    text-decoration: underline;
+  }
+  
