@@ -1,1 +1,9 @@
-<p>dashboard works!</p>
+<h2 class="title">Usuarios Registrados</h2>
+
+<div class="cards-container">
+  <div class="card" *ngFor="let usuario of usuarios">
+    <h3>{{ usuario.nombre }}</h3>
+    <p>Email: {{ usuario.email }}</p>
+  </div>
+</div>
+

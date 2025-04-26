@@ -1,23 +1,26 @@
-// src/app/app-routing.module.ts
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
-// Importa tus componentes
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: '**', redirectTo: '' } // redirección por si la ruta no existe
-];
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+// otros componentes...
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    // otros componentes
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    HttpClientModule // <-- necesario para las peticiones al backend
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppRoutingModule {}
+export class AppModule {}
